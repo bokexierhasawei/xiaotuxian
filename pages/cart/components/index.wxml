@@ -1,0 +1,89 @@
+<scroll-view
+  scroll-y
+  enhanced
+  show-scrollbar="{{false}}"
+  class="viewport">
+  <!-- 顶部工具栏 -->
+  <view class="topbar" wx:if="{{false}}">
+    <view class="locate">顺义区后沙峪地区</view>
+    <view class="extra">
+      <text class="edit">编辑</text>
+      <text class="menu"></text>
+    </view>
+  </view>
+
+  <block wx:if="{{true}}">
+    <!-- 优惠提示 -->
+    <view class="tips">
+      <text class="label">满减</text>
+      <text class="desc">满1件, 即可享受9折优惠</text>
+    </view>
+
+    <!-- 购物车商品 -->
+    <view class="carts">
+      <mp-slideview
+        wx:for="{{carts}}"
+        wx:key="index"
+        class="slideview"
+        buttons="{{slideButtons}}">
+        <view class="card">
+          <text
+            bind:tap="checkToggle"
+            mark:index="{{index}}"
+            class="checkbox icon-{{item.checked ? 'checked' : 'ring'}}"></text>
+          <!-- 商品缩略图 -->
+          <image class="thumb" src="{{item.thumb}}"></image>
+          <div class="meta">
+            <!-- 商品名称 -->
+            <view class="name ellipsis">{{item.name}}</view>
+            <!-- 商品类型 -->
+            <view class="type">{{item.type}}</view>
+            <!-- 价格 -->
+            <view class="price">
+              ¥{{item.price}}
+            </view>
+            <!-- 商品数量 -->
+            <view class="quantity">
+              <text class="text" bind:tap="changeQuantity">-</text>
+              <input class="input" type="text" value="{{item.quantity}}" />
+              <text class="text" bind:tap="changeQuantity">+</text>
+            </view>
+          </div>
+        </view>
+      </mp-slideview>
+    </view>
+  </block>
+
+  <!-- 状态提示 -->
+  <view class="blank" wx:if="{{false}}">
+    <text>登后后可查看购物车中的商品</text>
+    <button class="button">去登录</button>
+  </view>
+
+  <!-- 猜你喜欢 -->
+  <guess source=""></guess>
+</scroll-view>
+
+<!-- 吸底工具栏 -->
+<view class="toolbar" wx:if="{{true}}">
+  <text class="all" bind:tap="checkAll">全选</text>
+  <text class="text">合计:</text>
+  <text class="amount">266.00</text>
+  <!-- 操作按钮 -->
+  <view class="buttons">
+    <view class="button payment" bind:tap="goPay">去结算</view>
+    <view class="button collect">移入收藏</view>
+    <view class="button delete">删除</view>
+  </view>
+</view>
+
+<!-- 对话框 -->
+<view class="mask" wx:if="{{false}}">
+  <view class="dialog">
+    <text class="text">是否确认将此商品移入收藏?</text>
+    <div class="buttons">
+      <view class="button cancel">取消</view>
+      <view class="button confirm">确认</view>
+    </div>
+  </view>
+</view>

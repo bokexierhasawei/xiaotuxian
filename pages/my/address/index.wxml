@@ -1,0 +1,55 @@
+<view class="viewport">
+  <!-- 地址列表 -->
+  <scroll-view
+    enhanced
+    scroll-y>
+    <view class="address">
+      <mp-slideview buttons="{{slideButtons}}">
+        <view class="item">
+          <view class="user">
+            王东
+            <text>13824686868</text>
+            <text class="badge">默认</text>
+          </view>
+          <view
+            class="locate">北京市顺义区后沙峪地区安平北街6号院</view>
+          <navigator
+            url="./form/index?id=1"
+            class="edit"
+            hover-class="none">修改</navigator>
+        </view>
+      </mp-slideview>
+      <mp-slideview buttons="{{slideButtons}}">
+        <view class="item">
+          <view class="user">
+            寒冰 <text>13824686868</text>
+          </view>
+          <view class="locate">北京市顺义区后沙峪地区安平北街6号院</view>
+          <navigator
+            url="./form/index?id=2"
+            class="edit"
+            hover-class="none">修改</navigator>
+        </view>
+      </mp-slideview>
+      <mp-slideview buttons="{{slideButtons}}">
+        <view class="item">
+          <view class="user">
+            寒冰 <text>13824686868</text>
+          </view>
+          <view
+            class="locate default">北京市顺义区后沙峪地区安平北街6号院北京市顺义区后沙峪地区安平北街6号院</view>
+          <navigator
+            url="./form/index?id=3"
+            class="edit"
+            hover-class="none">修改</navigator>
+        </view>
+      </mp-slideview>
+    </view>
+  </scroll-view>
+  <!-- 添加按钮 -->
+  <view class="button">
+    <navigator
+      hover-class="none"
+      url="./form/index">新建地址</navigator>
+  </view>
+</view>

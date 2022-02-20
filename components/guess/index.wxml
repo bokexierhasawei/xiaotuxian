@@ -1,0 +1,43 @@
+
+<!-- 猜你喜欢 -->
+<view class="caption">
+  <text class="text">猜你喜欢</text>
+</view>
+<view class="guess">
+  <navigator url="/pages/goods/index" class="navigator">
+    <image
+      class="image"
+      src="http://static.botue.com/erabbit/static/uploads/goods_big_1.jpg"></image>
+    <view class="name">肖勒超薄防水手表精钢材质放水水功能肖勒超薄防水手表精钢材质放水水功能肖勒超薄防水手表精钢材质放水水功能</view>
+    <view class="price">
+      <text class="small">¥</text>899<text class="small">.00</text>
+    </view>
+  </navigator>
+  <navigator url="/pages/goods/index" class="navigator">
+    <image
+      class="image"
+      src="http://static.botue.com/erabbit/static/uploads/goods_big_2.jpg"></image>
+    <view class="name">肖勒超薄防水手表精钢材质放水水功能</view>
+    <view class="price">
+      <text class="small">¥</text>899<text class="small">.00</text>
+    </view>
+  </navigator>
+  <navigator url="/pages/goods/index" class="navigator">
+    <image
+      class="image"
+      src="http://static.botue.com/erabbit/static/uploads/goods_big_3.jpg"></image>
+    <view class="name">肖勒超薄防水手表精钢材质放水水功能</view>
+    <view class="price">
+      <text class="small">¥</text>899<text class="small">.00</text>
+    </view>
+  </navigator>
+  <navigator url="/pages/goods/index" class="navigator">
+    <image
+      class="image"
+      src="http://static.botue.com/erabbit/static/uploads/goods_big_4.jpg"></image>
+    <view class="name">肖勒超薄防水手表精钢材质放水水功能</view>
+    <view class="price">
+      <text class="small">¥</text>899<text class="small">.00</text>
+    </view>
+  </navigator>
+</view>

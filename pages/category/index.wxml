@@ -1,0 +1,216 @@
+
+<view class="viewport">
+  <!-- 搜索框 -->
+  <view
+    class="search"
+    mark:url="/pages/search/index"
+    bind:tap="navigateTo">
+    <view class="input">
+      <text class="icon-search">女靴</text>
+    </view>
+  </view>
+  <!-- 分类 -->
+  <view class="categories">
+    <!-- 主分类（一级类目） -->
+    <scroll-view
+      class="primary"
+      enhanced
+      scroll-y="true"
+      show-scrollbar="{{false}}">
+      <view class="item  active">精选推荐</view>
+      <view class="item">女装</view>
+      <view class="item">男装</view>
+      <view class="item">箱包皮具</view>
+      <view class="item">手表配饰</view>
+      <view class="item">男鞋</view>
+      <view class="item">女鞋</view>
+      <view class="item">护肤彩妆</view>
+      <view class="item">个人护理</view>
+      <view class="item">母婴</view>
+      <view class="item">运动户外</view>
+      <view class="item">手机数码</view>
+      <view class="item">家用电器</view>
+      <view class="item">家居家纺</view>
+      <view class="item">生活超市</view>
+    </scroll-view>
+    <!-- 次分类（二级类目） -->
+    <scroll-view
+      class="secondary"
+      enhanced
+      scroll-y
+      show-scrollbar="{{false}}">
+      <!-- 焦点图 -->
+      <carousel
+        class="banner"
+        source="{{bannerData}}"></carousel>
+      <!-- 区块 -->
+      <view class="panel">
+        <view class="title">
+          水果
+          <navigator
+            class="more"
+            hover-class="none"
+            url="/pages/goods/list/index">全部</navigator>
+        </view>
+        <view class="section">
+          <navigator
+            hover-class="none"
+            url="/pages/goods/index">
+            <image
+              src="http://static.botue.com/erabbit/static/uploads/category_thumb_1.jpg"></image>
+            <view class="name ellipsis">石榴</view>
+            <view class="price">
+              <text class="symbol">¥</text>
+              <text class="number">899</text>
+              <text class="decimal">.00</text>
+            </view>
+          </navigator>
+          <navigator
+            hover-class="none"
+            url="/pages/goods/index">
+            <image
+              src="http://static.botue.com/erabbit/static/uploads/category_thumb_2.jpg"></image>
+            <view class="name ellipsis">石榴</view>
+            <view class="price">
+              <text class="symbol">¥</text>
+              <text class="number">899</text>
+              <text class="decimal">.00</text>
+            </view>
+          </navigator>
+          <navigator
+            hover-class="none"
+            url="/pages/goods/index">
+            <image
+              src="http://static.botue.com/erabbit/static/uploads/category_thumb_3.jpg"></image>
+            <view class="name ellipsis">石榴</view>
+            <view class="price">
+              <text class="symbol">¥</text>
+              <text class="number">899</text>
+              <text class="decimal">.00</text>
+            </view>
+          </navigator>
+          <navigator
+            hover-class="none"
+            url="/pages/goods/index">
+            <image
+              src="http://static.botue.com/erabbit/static/uploads/category_thumb_4.jpg"></image>
+            <view class="name ellipsis">石榴</view>
+            <view class="price">
+              <text class="symbol">¥</text>
+              <text class="number">899</text>
+              <text class="decimal">.00</text>
+            </view>
+          </navigator>
+          <navigator
+            hover-class="none"
+            url="/pages/goods/index">
+            <image
+              src="http://static.botue.com/erabbit/static/uploads/category_thumb_5.jpg"></image>
+            <view class="name ellipsis">石榴</view>
+            <view class="price">
+              <text class="symbol">¥</text>
+              <text class="number">899</text>
+              <text class="decimal">.00</text>
+            </view>
+          </navigator>
+          <navigator
+            hover-class="none"
+            url="/pages/goods/index">
+            <image
+              src="http://static.botue.com/erabbit/static/uploads/category_thumb_6.jpg"></image>
+            <view class="name ellipsis">石榴</view>
+            <view class="price">
+              <text class="symbol">¥</text>
+              <text class="number">899</text>
+              <text class="decimal">.00</text>
+            </view>
+          </navigator>
+        </view>
+      </view>
+      <view class="panel">
+        <view class="title">
+          零食
+          <navigator
+            class="more"
+            hover-class="none"
+            url="/pages/goods/list/index">全部</navigator>
+        </view>
+        <view class="section">
+          <navigator
+            hover-class="none"
+            url="/pages/goods/index">
+            <image
+              src="http://static.botue.com/erabbit/static/uploads/category_thumb_1.jpg"></image>
+            <view class="name ellipsis">石榴</view>
+            <view class="price">
+              <text class="symbol">¥</text>
+              <text class="number">899</text>
+              <text class="decimal">.00</text>
+            </view>
+          </navigator>
+          <navigator
+            hover-class="none"
+            url="/pages/goods/index">
+            <image
+              src="http://static.botue.com/erabbit/static/uploads/category_thumb_2.jpg"></image>
+            <view class="name ellipsis">石榴</view>
+            <view class="price">
+              <text class="symbol">¥</text>
+              <text class="number">899</text>
+              <text class="decimal">.00</text>
+            </view>
+          </navigator>
+          <navigator
+            hover-class="none"
+            url="/pages/goods/index">
+            <image
+              src="http://static.botue.com/erabbit/static/uploads/category_thumb_3.jpg"></image>
+            <view class="name ellipsis">石榴</view>
+            <view class="price">
+              <text class="symbol">¥</text>
+              <text class="number">899</text>
+              <text class="decimal">.00</text>
+            </view>
+          </navigator>
+          <navigator
+            hover-class="none"
+            url="/pages/goods/index">
+            <image
+              src="http://static.botue.com/erabbit/static/uploads/category_thumb_4.jpg"></image>
+            <view class="name ellipsis">石榴</view>
+            <view class="price">
+              <text class="symbol">¥</text>
+              <text class="number">899</text>
+              <text class="decimal">.00</text>
+            </view>
+          </navigator>
+          <navigator
+            hover-class="none"
+            url="/pages/goods/index">
+            <image
+              src="http://static.botue.com/erabbit/static/uploads/category_thumb_5.jpg"></image>
+            <view class="name ellipsis">石榴</view>
+            <view class="price">
+              <text class="symbol">¥</text>
+              <text class="number">899</text>
+              <text class="decimal">.00</text>
+            </view>
+          </navigator>
+          <navigator
+            hover-class="none"
+            url="/pages/goods/index">
+            <image
+              src="http://static.botue.com/erabbit/static/uploads/category_thumb_6.jpg"></image>
+            <view class="name ellipsis">石榴</view>
+            <view class="price">
+              <text class="symbol">¥</text>
+              <text class="number">899</text>
+              <text class="decimal">.00</text>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+

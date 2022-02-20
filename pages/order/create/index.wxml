@@ -1,0 +1,126 @@
+<scroll-view
+  scroll-y
+  show-scrollbar="{{false}}"
+  class="viewport">
+  <!-- 收货地址 -->
+  <view
+    class="shipment"
+    bind:tap="navigateTo"
+    mark:url="/pages/my/address/index">
+    <view class="user">李明 13824686868{{layer.defaultIndex}}</view>
+    <view class="address">北京市顺义区后沙峪地区安平北街6号院</view>
+    <text class="icon icon-right"></text>
+  </view>
+
+  <!-- 商品信息 -->
+  <view class="goods">
+    <view class="item">
+      <image
+        class="cover"
+        src="http://static.botue.com/erabbit/static/uploads/goods_big_7.jpg"></image>
+      <view class="meta">
+        <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+        <view class="type">白色 全自动充电</view>
+        <view class="price">
+          <view class="actual">
+            <text class="symbol">¥</text>129.04
+          </view>
+          <view class="original">
+            <text class="symbol">¥</text>129.04
+          </view>
+        </view>
+        <view class="quantity">x1</view>
+      </view>
+    </view>
+    <view class="item">
+      <image
+        class="cover"
+        src="http://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+      <view class="meta">
+        <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+        <view class="type">白色 全自动充电</view>
+        <view class="price">
+          <view class="actual">
+            <text class="symbol">¥</text>129.04
+          </view>
+          <view class="original">
+            <text class="symbol">¥</text>129.04
+          </view>
+        </view>
+        <view class="quantity">x1</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 配送及支付方式 -->
+  <view class="related">
+    <view
+      class="item"
+      bind:tap="showHalfDialog"
+      mark:index="0">
+      <text class="text">配送时间</text>
+      <text class="picker icon-fonts">{{delivery.text}}</text>
+    </view>
+    <view
+      class="item"
+      bind:tap="showHalfDialog"
+      mark:index="1">
+      <text class="text">支付方式</text>
+      <text class="picker icon-fonts">{{payment.text}}</text>
+    </view>
+    <view class="item">
+      <text class="text">买家备注</text>
+      <input
+        cursor-spacing="30"
+        placeholder="建议留言前先与商家沟通确认"></input>
+    </view>
+  </view>
+
+  <!-- 支付金额 -->
+  <view class="settlement">
+    <view class="item">
+      <text class="text">商品总价: </text>
+      <text class="number">
+        <text class="symbol">¥</text>129.04
+      </text>
+    </view>
+    <view class="item">
+      <text class="text">运费: </text>
+      <text class="number">
+        <text class="symbol">¥</text>10.00
+      </text>
+    </view>
+    <view class="item">
+      <text class="text">折扣: </text>
+      <text class="number danger">
+        <text class="symbol">-¥</text>30.00
+      </text>
+    </view>
+  </view>
+  <view class="gap"></view>
+</scroll-view>
+
+<view class="toolbar">
+  <view class="amount">
+    <text class="symbol">¥</text>
+    <text class="number">266</text>
+    <text class="decimal">.00</text>
+  </view>
+  <view
+    bind:tap="goPayment"
+    class="button">提交订单</view>
+</view>
+
+<mp-half-screen-dialog
+  extClass="half-dialog"
+  show="{{halfDialogVisible}}"
+  closabled="{{false}}"
+  maskClosable="{{false}}">
+  <view slot="desc" class="description">
+    <layer
+      title="{{layer.title}}"
+      items="{{layer.list}}"
+      default-index="{{layer.currentIndex}}"
+      bind:change="onChange"></layer>
+  </view>
+</mp-half-screen-dialog>

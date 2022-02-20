@@ -1,0 +1,140 @@
+<wxs module="wxs" src="./index.wxs"></wxs>
+<view class="entries">
+  <scroll-view
+    class="scroll-view"
+    scroll-x
+    enhanced
+    show-scrollbar="{{false}}"
+    bind:scroll="{{wxs.scrolled}}">
+    <div class="navs">
+      <div class="nav">
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_1.png"></image>
+          <text class="text">美食</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_2.png"></image>
+          <text class="text">餐厨</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_3.png"></image>
+          <text class="text">电器</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_4.png"></image>
+          <text class="text">居家</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_5.png"></image>
+          <text class="text">洗护</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_6.png"></image>
+          <text class="text">汽车</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_7.png"></image>
+          <text class="text">旅行</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_8.png"></image>
+          <text class="text">母婴</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_9.png"></image>
+          <text class="text">专题</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_10.png"></image>
+          <text class="text">品牌</text>
+        </navigator>
+      </div>
+      <div class="nav">
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_1.png"></image>
+          <text class="text">美食</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_2.png"></image>
+          <text class="text">餐厨</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_3.png"></image>
+          <text class="text">电器</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_4.png"></image>
+          <text class="text">居家</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_5.png"></image>
+          <text class="text">洗护</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_6.png"></image>
+          <text class="text">汽车</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_7.png"></image>
+          <text class="text">旅行</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_8.png"></image>
+          <text class="text">母婴</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_9.png"></image>
+          <text class="text">专题</text>
+        </navigator>
+        <navigator hover-class="none" url="/pages/list/index" class="item">
+          <image
+            class="icon"
+            src="http://static.botue.com/erabbit/static/images/nav_icon_10.png"></image>
+          <text class="text">品牌</text>
+        </navigator>
+      </div>
+    </div>
+  </scroll-view>
+  <!-- 滚动条 -->
+  <view class="scroll-bar">
+    <view class="cursor" style="width: {{width}}"></view>
+  </view>
+</view>

@@ -1,0 +1,53 @@
+<view class="header">
+  <image
+    class="thumb"
+    src="http://static.botue.com/erabbit/static/uploads/goods_preview_1.jpg"></image>
+  <view class="wrap">
+    <view class="price">
+      <view class="discount">
+        <text class="symbol">¥</text>
+        <text class="number">129</text>
+        <text class="decimal">.00</text>
+      </view>
+      <view class="original">
+        <text class="symbol">¥</text>
+        <text class="number">199</text>
+        <text class="decimal">.00</text>
+      </view>
+    </view>
+    <view class="extra">
+      <text class="text">重量: 0.2kg</text>
+      <text class="text">编号: 676587698</text>
+    </view>
+  </view>
+</view>
+
+<view class="body">
+  <view class="specs">
+    <view class="label">颜色</view>
+    <view class="section">
+      <view class="item checked">白色</view>
+      <view class="item">黑色</view>
+      <view class="item">灰色</view>
+      <view class="item">卡其色</view>
+    </view>
+    <view class="label">类型</view>
+    <view class="section">
+      <view class="item">红外体温计</view>
+      <view class="item">双模</view>
+      <view class="item">灵敏</view>
+      <view class="item">便携式</view>
+    </view>
+  </view>
+  <view class="number">
+    <view class="label">数量</view>
+    <view class="counter">
+      <text class="text disabled">-</text>
+      <input type="text" class="input" value="1" />
+      <text class="text">+</text>
+    </view>
+  </view>
+</view>
+<view class="footer">
+  <view class="button primary">确定</view>
+</view>

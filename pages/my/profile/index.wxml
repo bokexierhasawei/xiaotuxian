@@ -1,0 +1,57 @@
+<view class="viewport">
+  <view
+    class="navbar"
+    style="padding-top: {{safeArea.top}}px">
+    <view class="back icon-left" bind:tap="navigateBack"></view>
+    <view class="title">个人信息</view>
+  </view>
+  <scroll-view scroll-y>
+    <!-- 头像 -->
+    <view class="avatar">
+      <image
+        bind:tap="chooseImage"
+        src="http://static.botue.com/erabbit/static/uploads/avatar_3.jpg" />
+      <text>点击修改头像</text>
+    </view>
+    <!-- 用户信息 -->
+    <view class="form">
+      <view class="form-item">
+        <text class="label">账号</text>
+        <input value="26219453547" />
+      </view>
+      <view class="form-item">
+        <text class="label">昵称</text>
+        <input value="张三" />
+      </view>
+      <view class="form-item">
+        <text class="label">性别</text>
+        <radio-group>
+          <label class="radio">
+            <radio value="1" color="#27ba9b" checked="{{true}}" /> 男
+          </label>
+          <label class="radio">
+            <radio value="0" color="#27ba9b" /> 女
+          </label>
+        </radio-group>
+      </view>
+      <view class="form-item">
+        <text class="label">出生日期</text>
+        <picker mode="date" start="2015-09-01" end="2017-09-01">
+          <view>2021-01-02</view>
+        </picker>
+      </view>
+      <view class="form-item">
+        <text class="label">城市</text>
+        <picker mode="region">
+          <view>北京</view>
+        </picker>
+      </view>
+      <view class="form-item">
+        <text class="label">职业</text>
+        <input value="伙夫" />
+      </view>
+    </view>
+    <!-- 提交按钮 -->
+    <view class="button">保 存</view>
+  </scroll-view>
+</view>

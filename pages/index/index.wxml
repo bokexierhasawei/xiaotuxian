@@ -1,0 +1,241 @@
+<!-- 导航条 -->
+<view
+  class="navbar"
+  style="padding-top: {{safeArea.top}}px">
+  <!-- 文字logo -->
+  <view class="logo">
+    <image
+      src="http://static.botue.com/erabbit/static/images/logo.png"></image>
+    <text>新鲜 · 亲民 · 快捷</text>
+  </view>
+  <!-- 搜索条 -->
+  <view class="search" bind:tap="goSearch">
+    <text class="icon-search">搜索商品</text>
+    <text class="icon-scan" catch:tap="scanCode"></text>
+  </view>
+</view>
+
+<scroll-view
+  class="viewport"
+  scroll-y
+  refresher-enabled
+  enable-back-to-top
+  enhanced
+  refresher-background="#f7f7f8"
+  show-scrollbar="{{false}}">
+  <!-- 焦点图 -->
+  <carousel
+    class="banner"
+    source="{{bannerData}}"></carousel>
+  <!-- 前台类目 -->
+  <entries source="{{[]}}"></entries>
+  <!-- 推荐专区 -->
+  <view class="panel recommend">
+    <view class="item">
+      <view class="title">
+        特惠推荐 <text>精选全攻略</text>
+      </view>
+      <view
+        bind:tap="navigateTo"
+        mark:url="/pages/recommend/index?type=1"
+        class="cards">
+        <navigator hover-class="none" url=" ">
+          <image
+            mode="aspectFit"
+            src="http://static.botue.com/erabbit/static/uploads/goods_small_1.jpg"></image>
+        </navigator>
+        <navigator hover-class="none" url=" ">
+          <image
+            mode="aspectFit"
+            src="http://static.botue.com/erabbit/static/uploads/goods_small_2.jpg"></image>
+        </navigator>
+      </view>
+    </view>
+    <view class="item">
+      <view class="title">
+        爆款推荐 <text>最受欢迎</text>
+      </view>
+      <view
+        bind:tap="navigateTo"
+        mark:url="/pages/recommend/index?type=2"
+        class="cards">
+        <navigator hover-class="none" url=" ">
+          <image
+            mode="aspectFit"
+            src="http://static.botue.com/erabbit/static/uploads/goods_small_3.jpg"></image>
+        </navigator>
+        <navigator hover-class="none" url=" ">
+          <image
+            mode="aspectFit"
+            src="http://static.botue.com/erabbit/static/uploads/goods_small_4.jpg"></image>
+        </navigator>
+      </view>
+    </view>
+    <view class="item">
+      <view class="title">
+        一站买全 <text>精选优选</text>
+      </view>
+      <view
+        bind:tap="navigateTo"
+        mark:url="/pages/recommend/index?type=3"
+        class="cards">
+        <navigator hover-class="none" url=" ">
+          <image
+            mode="aspectFit"
+            src="http://static.botue.com/erabbit/static/uploads/goods_small_5.jpg"></image>
+        </navigator>
+        <navigator hover-class="none" url=" ">
+          <image
+            mode="aspectFit"
+            src="http://static.botue.com/erabbit/static/uploads/goods_small_6.jpg"></image>
+        </navigator>
+      </view>
+    </view>
+    <view class="item" bind:tap="nextVersion">
+      <view class="title">
+        领券中心 <text>超值优惠券</text>
+      </view>
+      <view class="cards">
+        <navigator hover-class="none" url=" ">
+          <image
+            mode="aspectFit"
+            src="http://static.botue.com/erabbit/static/uploads/goods_small_7.jpg"></image>
+        </navigator>
+        <navigator hover-class="none" url=" ">
+          <image
+            mode="aspectFit"
+            src="http://static.botue.com/erabbit/static/uploads/goods_small_8.jpg"></image>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 新鲜好物 -->
+  <view class="panel fresh">
+    <view class="title">
+      新鲜好物
+      <navigator
+        hover-class="none"
+        class="more"
+        url="/pages/recommend/index?type=5">更多</navigator>
+    </view>
+    <view class="cards">
+      <navigator
+        hover-class="none"
+        url="/pages/goods/index">
+        <image
+          mode="aspectFit"
+          src="http://static.botue.com/erabbit/static/uploads/goods_small_9.jpg"></image>
+        <view class="name">香水小样</view>
+        <view class="price">
+          <text class="small">¥</text>299
+        </view>
+      </navigator>
+      <navigator
+        hover-class="none"
+        url="/pages/goods/index">
+        <image
+          mode="aspectFit"
+          src="http://static.botue.com/erabbit/static/uploads/goods_small_10.jpg"></image>
+        <view class="name">红外体温仪</view>
+        <view class="price">
+          <text class="small">¥</text>266
+        </view>
+      </navigator>
+      <navigator
+        hover-class="none"
+        url="/pages/goods/index">
+        <image
+          mode="aspectFit"
+          src="http://static.botue.com/erabbit/static/uploads/goods_small_11.jpg"></image>
+        <view class="name">美的电饭煲美的电饭煲</view>
+        <view class="price">
+          <text class="small">¥</text>199
+        </view>
+      </navigator>
+      <navigator
+        hover-class="none"
+        url="/pages/goods/index">
+        <image
+          mode="aspectFit"
+          src="http://static.botue.com/erabbit/static/uploads/goods_small_12.jpg"></image>
+        <view class="name">过滤水壶</view>
+        <view class="price">
+          <text class="small">¥</text>99
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 热门品牌 -->
+  <!-- <view class="panel brands">
+    <view class="title">
+      热门品牌
+      <navigator hover-class="none" class="more" url="/pages/list/index">更多</navigator>
+    </view>
+    <view class="cards">
+      <navigator hover-class="none" url="/pages/goods/index">
+        <image
+          mode="aspectFit"
+          src="http://static.botue.com/erabbit/static/uploads/brand_logo_1.jpg"></image>
+        <view class="name">小米</view>
+        <view class="price">99元起</view>
+      </navigator>
+      <navigator hover-class="none" url="/pages/goods/index">
+        <image
+          mode="aspectFit"
+          src="http://static.botue.com/erabbit/static/uploads/brand_logo_2.jpg"></image>
+        <view class="name">TCL</view>
+        <view class="price">199起</view>
+      </navigator>
+      <navigator hover-class="none" url="/pages/goods/index">
+        <image
+          mode="aspectFit"
+          src="http://static.botue.com/erabbit/static/uploads/brand_logo_3.jpg"></image>
+        <view class="name">饭小宝</view>
+        <view class="price">9.9起</view>
+      </navigator>
+      <navigator hover-class="none" url="/pages/goods/index">
+        <image
+          mode="aspectFit"
+          src="http://static.botue.com/erabbit/static/uploads/brand_logo_4.jpg"></image>
+        <view class="name">鳄鱼</view>
+        <view class="price">299起</view>
+      </navigator>
+    </view>
+  </view> -->
+  <!-- 专题 -->
+  <!-- <view class="panel topic">
+    <view class="title">
+      专题
+      <navigator hover-class="none" class="more" url="">更多</navigator>
+    </view>
+    <div class="cards">
+      <navigator hover-class="none" url="">
+        <image
+          src="http://static.botue.com/erabbit/static/uploads/topic_1.jpg"></image>
+        <view class="name">忙里忙外，回家吃饭忙里忙外，回家吃饭</view>
+        <view class="price">
+          <text>19.9元</text>起
+        </view>
+        <view class="extra">
+          <text space="ensp" class="icon-heart">1220</text>
+          <text space="ensp" class="icon-preview">1000</text>
+        </view>
+      </navigator>
+      <navigator hover-class="none" url="">
+        <image
+          src="http://static.botue.com/erabbit/static/uploads/topic_2.jpg"></image>
+        <view class="name">忙里忙外，回家吃饭</view>
+        <view class="price">
+          <text>19.9元</text>起
+        </view>
+        <view class="extra">
+          <text space="ensp" class="icon-heart">1220</text>
+          <text space="ensp" class="icon-preview">1000</text>
+        </view>
+      </navigator>
+    </div>
+  </view> -->
+  <!-- 猜你喜欢 -->
+  <guess source="{{ [] }}"></guess>
+  <view class="loading" wx:if="{{ hasMore }}">正在加载...</view>
+</scroll-view>

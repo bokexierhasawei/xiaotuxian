@@ -1,0 +1,27 @@
+<view class="viewport">
+  <view class="logo">
+    <image src="https://static.botue.com/erabbit/static/images/logo_icon.png"></image>
+  </view>
+  <view class="login">
+    <view class="caption">
+      若已在小兔鲜儿App/浏览器购买过
+      <text>推荐选择已有账号登录</text>
+    </view>
+    <view class="button danger">
+      <text class="icon icon-phone"></text>
+      手机号快捷登录
+    </view>
+    <view
+      class="button primary"
+      bind:tap="navigateTo"
+      mark:url="/pages/login/phone/index">
+      <text class="icon icon-weixin"></text>
+      微信一键登录
+      </view>
+    <view class="button">
+      <text class="icon icon-mail"></text>
+      常用邮登录
+    </view>
+    <view class="tips">登录/注册即视为你同意《服务条款》和《小兔鲜儿隐私协议》</view>
+  </view>
+</view>

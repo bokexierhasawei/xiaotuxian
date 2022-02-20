@@ -1,0 +1,134 @@
+<view class="viewport">
+  <!-- 推荐封面图 -->
+  <view class="cover">
+    <image src="{{meta[type].coverPath}}"></image>
+  </view>
+  <view class="tabs">
+    <text
+      wx:for="{{meta[type].tabs}}"
+      wx:key="*this"
+      class="text {{index === 0 && 'active'}}">{{item}}</text>
+  </view>
+  <scroll-view
+    scroll-y
+    enhanced
+    show-scrollbar="{{ false }}"
+    class="scroll-view">
+    <view class="goods">
+      <navigator
+        hover-class="none"
+        url="/pages/goods/index"
+        class="navigator">
+        <image
+          class="thumb"
+          src="https://static.botue.com/erabbit/static/uploads/goods_big_2.jpg"></image>
+        <view class="name ellipsis">肖勒超薄防水手表精钢材质 放水水功能</view>
+        <view class="price">
+          <text class="symbol">¥</text>
+          <text class="number">199</text>
+          <text class="decimal">.00</text>
+        </view>
+      </navigator>
+      <navigator
+        hover-class="none"
+        url="/pages/goods/index"
+        class="navigator">
+        <image
+          class="thumb"
+          src="https://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+        <view class="name ellipsis">肖勒超薄防水手表精钢材质 放水水功能</view>
+        <view class="price">
+          <text class="symbol">¥</text>
+          <text class="number">199</text>
+          <text class="decimal">.00</text>
+        </view>
+      </navigator>
+      <navigator
+        hover-class="none"
+        url="/pages/goods/index"
+        class="navigator">
+        <image
+          class="thumb"
+          src="https://static.botue.com/erabbit/static/uploads/goods_big_4.jpg"></image>
+        <view class="name ellipsis">肖勒超薄防水手表精钢材质 放水水功能</view>
+        <view class="price">
+          <text class="symbol">¥</text>
+          <text class="number">199</text>
+          <text class="decimal">.00</text>
+        </view>
+      </navigator>
+      <navigator
+        hover-class="none"
+        url="/pages/goods/index"
+        class="navigator">
+        <image
+          class="thumb"
+          src="https://static.botue.com/erabbit/static/uploads/goods_big_5.jpg"></image>
+        <view class="name ellipsis">肖勒超薄防水手表精钢材质 放水水功能</view>
+        <view class="price">
+          <text class="symbol">¥</text>
+          <text class="number">199</text>
+          <text class="decimal">.00</text>
+        </view>
+      </navigator>
+      <navigator
+        hover-class="none"
+        url="/pages/goods/index"
+        class="navigator">
+        <image
+          class="thumb"
+          src="https://static.botue.com/erabbit/static/uploads/goods_big_2.jpg"></image>
+        <view class="name ellipsis">肖勒超薄防水手表精钢材质 放水水功能</view>
+        <view class="price">
+          <text class="symbol">¥</text>
+          <text class="number">199</text>
+          <text class="decimal">.00</text>
+        </view>
+      </navigator>
+      <navigator
+        hover-class="none"
+        url="/pages/goods/index"
+        class="navigator">
+        <image
+          class="thumb"
+          src="https://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+        <view class="name ellipsis">肖勒超薄防水手表精钢材质 放水水功能</view>
+        <view class="price">
+          <text class="symbol">¥</text>
+          <text class="number">199</text>
+          <text class="decimal">.00</text>
+        </view>
+      </navigator>
+      <navigator
+        hover-class="none"
+        url="/pages/goods/index"
+        class="navigator">
+        <image
+          class="thumb"
+          src="https://static.botue.com/erabbit/static/uploads/goods_big_7.jpg"></image>
+        <view class="name ellipsis">肖勒超薄防水手表精钢材质 放水水功能</view>
+        <view class="price">
+          <text class="symbol">¥</text>
+          <text class="number">199</text>
+          <text class="decimal">.00</text>
+        </view>
+      </navigator>
+      <navigator
+        hover-class="none"
+        url="/pages/goods/index"
+        class="navigator">
+        <image
+          class="thumb"
+          src="https://static.botue.com/erabbit/static/uploads/goods_big_3.jpg"></image>
+        <view class="name ellipsis">肖勒超薄防水手表精钢材质 放水水功能</view>
+        <view class="price">
+          <text class="symbol">¥</text>
+          <text class="number">199</text>
+          <text class="decimal">.00</text>
+        </view>
+      </navigator>
+    </view>
+    <view class="loading">正在加载...</view>
+  </scroll-view>
+</view>
+

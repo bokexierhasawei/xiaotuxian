@@ -1,0 +1,818 @@
+<wxs module="wxs" src="./index.wxs"></wxs>
+<view class="viewport">
+  <view class="tabs" bind:tap="changeTab">
+    <text data-swiper-index="0">全部</text>
+    <text data-swiper-index="1">待付款</text>
+    <text data-swiper-index="2">待发货</text>
+    <text data-swiper-index="3">待收货</text>
+    <text data-swiper-index="4">待评价</text>
+    <!-- 游标 -->
+    <view class="cursor"></view>
+  </view>
+  <swiper
+    class="orders"
+    data-current="{{adjustIndex}}"
+    duration="{{200}}"
+    current="{{swiperIndex}}"
+    bind:change="changeTab"
+    bind:animationfinish="onFinish"
+    bind:transition="{{wxs.onTransition}}">
+    <swiper-item item-id="0">
+      <scroll-view
+        enhanced
+        scroll-y
+        show-scrollbar="{{false}}">
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text>已完成</text>
+            <text class="icon-delete"></text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_7.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/cart/default/index"
+              class="button primary">再次购买</view>
+            <view class="button">取消订单</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text>已完成</text>
+            <text class="icon-delete"></text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_5.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_7.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="more">查看更多</view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共3件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/cart/default/index"
+              class="button primary">再次购买</view>
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/comments/publish/index"
+              class="button">去评价</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text class="primary">待付款</text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view class="button primary">取消订单</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text class="primary">待付款</text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_5.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view class="button primary">取消订单</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text>已完成</text>
+            <text class="icon-delete"></text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_5.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+              <text class="quantity">x2</text>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共3件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/cart/default/index"
+              class="button primary">再次购买</view>
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/comments/publish/index"
+              class="button">去评价</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item item-id="1">
+      <scroll-view
+        enhanced
+        scroll-y
+        show-scrollbar="{{false}}">
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text class="primary">待付款</text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view class="button primary">取消订单</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text>已完成</text>
+            <text class="icon-delete"></text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_7.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/cart/default/index"
+              class="button primary">再次购买</view>
+            <view class="button">取消订单</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text>已完成</text>
+            <text class="icon-delete"></text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_5.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_7.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="more">查看更多</view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共3件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/cart/default/index"
+              class="button primary">再次购买</view>
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/comments/publish/index"
+              class="button">去评价</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text class="primary">待付款</text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_5.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view class="button primary">取消订单</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item item-id="2">
+      <scroll-view
+        enhanced
+        scroll-y
+        show-scrollbar="{{false}}">
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text class="primary">待付款</text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view class="button primary">取消订单</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text class="primary">待付款</text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_5.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_7.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="more">查看更多</view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共3件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view class="button primary">取消订单</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text class="primary">待付款</text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_5.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view class="button primary">取消订单</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item item-id="3">
+      <scroll-view
+        enhanced
+        scroll-y
+        show-scrollbar="{{false}}">
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text class="primary">待付款</text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view class="button primary">取消订单</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text>已完成</text>
+            <text class="icon-delete"></text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_7.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/cart/default/index"
+              class="button primary">再次购买</view>
+            <view class="button">取消订单</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text>已完成</text>
+            <text class="icon-delete"></text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_5.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_7.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="more">查看更多</view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共3件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/cart/default/index"
+              class="button primary">再次购买</view>
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/comments/publish/index"
+              class="button">去评价</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text class="primary">待付款</text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_5.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view class="button primary">取消订单</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item item-id="4">
+      <scroll-view
+        enhanced
+        scroll-y
+        show-scrollbar="{{false}}">
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text class="primary">待付款</text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view class="button primary">取消订单</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text>已完成</text>
+            <text class="icon-delete"></text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_7.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/cart/default/index"
+              class="button primary">再次购买</view>
+            <view class="button">取消订单</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text>已完成</text>
+            <text class="icon-delete"></text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_5.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_6.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_7.jpg"></image>
+              <text class="quantity">x1</text>
+            </view>
+            <view class="more">查看更多</view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共3件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/cart/default/index"
+              class="button primary">再次购买</view>
+            <view
+              bind:tap="navigateTo"
+              mark:url="/pages/comments/publish/index"
+              class="button">去评价</view>
+          </view>
+        </view>
+        <view class="card">
+          <!-- 订单相关 -->
+          <view class="status">
+            <text class="date">2019-07-02 18:03:06</text>
+            <text class="primary">待付款</text>
+          </view>
+          <!-- 商品信息 -->
+          <navigator
+            class="goods"
+            url="./detail/index"
+            hover-class="none">
+            <view class="cover">
+              <image
+                src="http://static.botue.com/erabbit/static/uploads/goods_big_5.jpg"></image>
+            </view>
+            <view class="meta">
+              <view class="name ellipsis">康尔贝 非接触式红外体温仪 领券立减30元 婴儿级材质 测温 康尔贝 非接触式红外体温仪</view>
+              <view class="type">白色 全自动充电</view>
+            </view>
+          </navigator>
+          <!-- 支付信息 -->
+          <view class="payment">
+            <text class="quantity">共1件商品</text>
+            <text>实付</text>
+            <text class="amount">
+              <text class="symbol">¥</text>129.04
+            </text>
+          </view>
+          <!-- 订单操作 -->
+          <view class="action">
+            <view class="button primary">取消订单</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
